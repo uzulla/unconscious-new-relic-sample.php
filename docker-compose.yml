@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: 'unconscious-web'
+    volumes:
+      - ".:/var/www/"
+    environment:
+      NR_APP_NAME: "${NR_APP_NAME}"
+      NR_LICENSE_KEY: "${NR_LICENSE_KEY}"
+    ports:
+      - "8080:80"
